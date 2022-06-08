@@ -75,7 +75,7 @@ input[type="search"]::placeholder {
   color: #bbb;
 }
 
-button[type="submit"] {
+button[type="button"] {
   text-indent: -999px;
   overflow: hidden;
   width: 40px;
@@ -212,6 +212,7 @@ input[type="search"]:focus {
   padding-top: 50px;
   padding-left: 20px;
   padding-right: 20px;
+  width: 100%;
 }
 
 /* tablDat started here */
@@ -265,4 +266,17 @@ input[type="search"]:focus {
   padding: 5px;
   font-size: 1.3rem;
 
+}
+
+
+
+#greetingLink {
+  background-color: rgba(247, 240, 240, 0.966);
+  color: black;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+#greetingLink:hover {
+  background-color: grey
 }
