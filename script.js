@@ -22,7 +22,7 @@ const data = [
     {
         id: 1,
         name: "Hina Usman",
-        date: "01/24/1987",
+        dateofbirth: "01/24/1987",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -31,7 +31,7 @@ const data = [
     {
         id: 2,
         name: "Deepali Jain ",
-        date: "09/09/1988",     // changing date and month to current date to show initial content
+        dateofbirth: "09/09/1988",     // changing dateofbirth and month to current date to show initial content
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -39,7 +39,7 @@ const data = [
     {
         id: 3,
         name: "Camila Abreu",
-        date: "11/09/1988", // changing date and month to current date to show initial content
+        dateofbirth: "11/09/1988", // changing date and month to current date to show initial content
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -47,7 +47,7 @@ const data = [
     {
         id: 4,
         name: "Hanna",
-        date: "09/09/1996",
+        dateofbirth: "09/09/1996",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -55,7 +55,7 @@ const data = [
     {
         id: 5,
         name: "Huda",
-        date: "06/06/1996",
+        dateofbirth: "06/06/1996",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -63,7 +63,7 @@ const data = [
     {
         id: 6,
         name: "Julieta Rodríguez",
-        date: "06/04/1996",
+        dateofbirth: "06/04/1996",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -71,7 +71,7 @@ const data = [
     {
         id: 7,
         name: "Lalithauda",
-        date: "06/06/1996",
+        dateofbirth: "06/06/1996",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -79,7 +79,7 @@ const data = [
     {
         id: 8,
         name: "Shobana",
-        date: "11/09/1996",
+        dateofbirth: "11/09/1996",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -87,7 +87,7 @@ const data = [
     {
         id: 9,
         name: "Aditi Sawardekar",
-        date: "06/05/1996",
+        dateofbirth: "06/05/1996",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -95,7 +95,7 @@ const data = [
     {
         id: 10,
         name: "Zaina Faheem",
-        date: "06/05/1996",
+        dateofbirth: "06/05/1996",
         image: "images/empty.png",
         designation: "student",
         email: "abc@xyz.com"
@@ -105,41 +105,101 @@ const data = [
 ];
 
 
-const peopleSearchResult = document.getElementById("peopleSearchResult");
-const respTableBody = document.getElementById("resp-table-body");
 
-for (let i = 0; i < data.length; i++) {
-    let section = document.createElement("section");
-    section.className = "container";
 
-    let article = document.createElement("article");
-    article.setAttribute("class", "person");
+function PopulateCardsView() {
+    const peopleSearchResult = document.getElementById("peopleSearchResult");
 
-    let img = document.createElement("img");
-    img.src = data[i].image;
-    img.setAttribute("alt", data[i].name);
+    for (let i = 0; i < data.length; i++) {
+        let section = document.createElement("section");
+        section.className = "container";
 
-    let info = document.createElement("div");
+        let article = document.createElement("article");
+        article.className = "person";
 
-    let name = document.createElement("h4");
-    //h4.setAttribute("id", "name");
-    name.innerHTML = data[i].name;
+        let img = document.createElement("img");
+        img.src = data[i].image;
+        img.setAttribute("alt", data[i].name);
 
-    let dob = document.createElement("h4");
-    dob.innerHTML = data[i].date;
+        let info = document.createElement("div");
 
-    let greetingsLink = document.createElement("a");
-    greetingsLink.href = "#";
-    greetingsLink.textContent = "Send Greetings";
+        let name = document.createElement("h4");
+        //h4.setAttribute("id", "name");
+        name.innerHTML = data[i].name;
 
-    info.appendChild(name);
-    info.appendChild(dob);
-    info.appendChild(greetingsLink);
+        let dob = document.createElement("h4");
+        dob.innerHTML = data[i].dateofbirth;
 
-    article.appendChild(img);
-    article.appendChild(info);
+        let greetingsLink = document.createElement("a");
+        greetingsLink.href = "#";
+        greetingsLink.textContent = "Send Greetings";
 
-    section.appendChild(article);
-    peopleSearchResult.appendChild(section);
+        info.appendChild(name);
+        info.appendChild(dob);
+        info.appendChild(greetingsLink);
+
+        article.appendChild(img);
+        article.appendChild(info);
+
+        section.appendChild(article);
+        peopleSearchResult.appendChild(section);
+
+    }
 }
+
+
+
+function PopulateTabularView() {
+
+    const respTableBody = document.getElementById("resp-table-body");
+
+
+    for (let i = 0; i < data.length; i++) {
+        const row = document.createElement("div");
+
+        // alernate css on rows of table
+        if (i % 2 == 0) {
+            row.className = "resp-table-row";
+        }
+        else {
+            row.className = "resp-table-row-colored";
+        }
+
+
+        let nameCell = document.createElement("div");
+        nameCell.className = "table-body-cell";
+        nameCell.innerHTML = data[i].name;
+
+        let dobCell = document.createElement("div");
+        dobCell.className = "table-body-cell";
+        dobCell.innerHTML = data[i].dateofbirth;
+
+        let designationCell = document.createElement("div");
+        designationCell.className = "table-body-cell";
+        designationCell.innerHTML = data[i].designation;
+
+        let emailCell = document.createElement("div");
+        emailCell.className = "table-body-cell";
+        emailCell.innerHTML = data[i].email;
+
+        let greetingsCell = document.createElement("div");
+        greetingsCell.className = "table-body-cell";
+        greetingsCell.innerHTML = '<a href="#">Send Greetings</a>';
+
+        row.appendChild(nameCell);
+        row.appendChild(dobCell);
+        row.appendChild(designationCell);
+        row.appendChild(emailCell);
+        row.appendChild(greetingsCell);
+
+        respTableBody.appendChild(row);
+
+    }
+}
+
+// populate data in cards view when page loads
+PopulateCardsView();
+
+// Populate data in tabular view when page loads
+PopulateTabularView();
 
