@@ -5,92 +5,93 @@ const data = [
         name: "Camila Abreu",
         dateofbirth: "11/09/1994", // changing date and month to current date to show initial content
         image: "images/camila.png",
-        designation: "student",
+        designation: "Student",
         email: "camilaabreu@gmail.com"
 
     },
     {
         id: 2,
+        name: "Gohar Vardanyan",
+        dateofbirth: "06/05/1996",
+        image: "images/gohar.jpg",
+        designation: "Teacher",
+        email: "goharvardyan@gmail.com"
+    },
+    {
+        id: 3,
         name: "Deepali Jain ",
         dateofbirth: "09/09/1988",     // changing dateofbirth and month to current date to show initial content
         image: "images/empty.png",
-        designation: "student",
+        designation: "Student",
         email: "aaa@xyz.com"
     },
 
     {
-        id: 3,
+        id: 4,
         name: "Hina Usman",
         dateofbirth: "01/24/1987",
         image: "images/hina.png",
-        designation: "student",
+        designation: "Student",
         email: "mail.hinausman@gmail.com"
 
     },
     {
-        id: 4,
+        id: 5,
         name: "Hanna",
         dateofbirth: "09/09/1996",
         image: "images/hanna.jpg",
-        designation: "student",
+        designation: "Student",
         email: "hannaremy@outlook.com"
     },
     {
-        id: 5,
+        id: 6,
         name: "Huda",
         dateofbirth: "06/06/1996",
         image: "images/huda.jpg",
-        designation: "student",
+        designation: "Student",
         email: "hou_da2009@hotmail.com"
     },
     {
-        id: 6,
+        id: 7,
         name: "Julieta Rodríguez",
         dateofbirth: "06/04/1996",
         image: "images/juleita.jpg",
-        designation: "student",
+        designation: "Student",
         email: "julietarodriguezba@gmail.com"
     },
     {
-        id: 7,
+        id: 8,
         name: "Lalithauda",
         dateofbirth: "06/06/1996",
         image: "images/lalitah.jpg",
-        designation: "student",
+        designation: "Student",
         email: "aletilalitha@gmail.com"
     },
     {
-        id: 8,
+        id: 9,
         name: "Shobana",
         dateofbirth: "11/09/1996",
         image: "images/empty.png",
-        designation: "student",
+        designation: "Student",
         email: "ggg@xyz.com"
     },
     {
-        id: 9,
+        id: 10,
         name: "Aditi Sawardekar",
         dateofbirth: "06/05/1996",
         image: "images/empty.png",
-        designation: "student",
+        designation: "Student",
         email: "nnn@xyz.com"
     },
     {
-        id: 10,
+        id: 11,
         name: "Zaina Faheem",
         dateofbirth: "06/05/1996",
         image: "images/empty.png",
-        designation: "student",
+        designation: "Student",
         email: "hhh@xyz.com"
     },
-    {
-        id: 11,
-        name: "Gohar Vardanyan",
-        dateofbirth: "06/05/1996",
-        image: "images/gohar.jpg",
-        designation: "student",
-        email: "goharvardyan@gmail.com"
-    },
+
 
 
 
@@ -264,6 +265,12 @@ function populateCardsView() {
         let dob = document.createElement("h4");
         dob.innerHTML = data[i].dateofbirth;
 
+        let Desig = document.createElement("h4");
+        Desig.innerHTML = data[i].designation;
+
+        let EmailId = document.createElement("h4");
+        EmailId.innerHTML = data[i].email;
+
         let greetingsLink = document.createElement("a");
         greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
         greetingsLink.id = "greetingLink";
@@ -271,7 +278,12 @@ function populateCardsView() {
 
         info.appendChild(name);
         info.appendChild(dob);
+
+        info.appendChild(Desig);
+        info.appendChild(EmailId);
         info.appendChild(greetingsLink);
+
+
 
         article.appendChild(img);
         article.appendChild(info);

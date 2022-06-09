@@ -4,10 +4,15 @@
   box-sizing: border-box;
 }
 
+/* body {
+  background-image: url('images/background image.jpg');
+} */
+
+
 .mainHeader {
   display: flex;
   width: 100%;
-  /* background-color: grey; */
+  /* background-color: rgb(240, 232, 232); */
   /* padding-top: 20Px; */
 
   font-size: 40px;
@@ -36,6 +41,7 @@
 
 .headerText {
   padding-top: 30px;
+
 }
 
 
@@ -48,6 +54,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   padding-top: 5px;
   padding-bottom: 5px;
+
 
 }
 
@@ -160,6 +167,7 @@ input[type="search"]:focus {
   flex-wrap: wrap;
   margin: 30px;
   /* justify-content: center; */
+  /* background-image: url('images/background image.jpg'); */
 
 }
 
@@ -174,6 +182,7 @@ input[type="search"]:focus {
   padding: 1.5rem 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   flex: 32%;
+
 }
 
 .container h3 {
