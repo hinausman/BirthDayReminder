@@ -2,11 +2,11 @@
 const data = [
     {
         id: 1,
-        name: "Hina Usman",
-        dateofbirth: "01/24/1987",
-        image: "images/empty.png",
+        name: "Camila Abreu",
+        dateofbirth: "11/09/1994", // changing date and month to current date to show initial content
+        image: "images/camila.png",
         designation: "student",
-        email: "mail.hinausman@gmail.com"
+        email: "camilaabreu@gmail.com"
 
     },
     {
@@ -17,45 +17,47 @@ const data = [
         designation: "student",
         email: "aaa@xyz.com"
     },
+
     {
         id: 3,
-        name: "Camila Abreu",
-        dateofbirth: "11/09/1988", // changing date and month to current date to show initial content
-        image: "images/empty.png",
+        name: "Hina Usman",
+        dateofbirth: "01/24/1987",
+        image: "images/hina.png",
         designation: "student",
-        email: "zzz@xyz.com"
+        email: "mail.hinausman@gmail.com"
+
     },
     {
         id: 4,
         name: "Hanna",
         dateofbirth: "09/09/1996",
-        image: "images/empty.png",
+        image: "images/hanna.jpg",
         designation: "student",
-        email: "bbb@xyz.com"
+        email: "hannaremy@outlook.com"
     },
     {
         id: 5,
         name: "Huda",
         dateofbirth: "06/06/1996",
-        image: "images/empty.png",
+        image: "images/huda.jpg",
         designation: "student",
-        email: "ccc@xyz.com"
+        email: "hou_da2009@hotmail.com"
     },
     {
         id: 6,
         name: "Julieta Rodríguez",
         dateofbirth: "06/04/1996",
-        image: "images/empty.png",
+        image: "images/juleita.jpg",
         designation: "student",
-        email: "ddd@xyz.com"
+        email: "julietarodriguezba@gmail.com"
     },
     {
         id: 7,
         name: "Lalithauda",
         dateofbirth: "06/06/1996",
-        image: "images/empty.png",
+        image: "images/lalitah.jpg",
         designation: "student",
-        email: "ffff@xyz.com"
+        email: "aletilalitha@gmail.com"
     },
     {
         id: 8,
@@ -81,6 +83,15 @@ const data = [
         designation: "student",
         email: "hhh@xyz.com"
     },
+    {
+        id: 11,
+        name: "Gohar Vardanyan",
+        dateofbirth: "06/05/1996",
+        image: "images/gohar.jpg",
+        designation: "student",
+        email: "goharvardyan@gmail.com"
+    },
+
 
 
 ];
