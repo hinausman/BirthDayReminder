@@ -36,7 +36,7 @@
 
 .mainBox {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .headerText {
@@ -171,11 +171,9 @@ input[type="search"]:focus {
 
 }
 
-
-
-.container {
+.right-container {
   width: 90vw;
-  margin: 30px;
+  margin: 10px;
   max-width: 450px;
   background: #fff;
   border-radius: 0.25rem;
@@ -183,6 +181,25 @@ input[type="search"]:focus {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   flex: 32%;
 
+}
+
+.right-container h3 {
+  font-weight: normal;
+  text-transform: none;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.container {
+  width: 90vw;
+  margin: 10px;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 0.25rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  flex: 32%;
+  max-height: 200px;
 }
 
 .container h3 {
@@ -197,12 +214,12 @@ input[type="search"]:focus {
   grid-template-columns: auto 1fr;
   column-gap: 0.75rem;
   margin-bottom: 1.5rem;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .person img {
-  width: 75px;
-  height: 75px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -219,9 +236,10 @@ input[type="search"]:focus {
 #peopleSearchResultTable {
   display: none;
   padding-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 75%;
+  height: 100px;
 }
 
 /* tablDat started here */
@@ -261,12 +279,13 @@ input[type="search"]:focus {
 
 .resp-table-row {
   display: table-row;
-
+  height: 20px;
 }
 
 .resp-table-row-colored {
   display: table-row;
   background-color: rgba(169, 162, 162, 0.966);
+  height: 20px;
 
 }
 
@@ -274,7 +293,7 @@ input[type="search"]:focus {
   display: table-cell;
   padding: 5px;
   font-size: 1.3rem;
-
+  height: 20px;
 }
 
 
@@ -282,10 +301,27 @@ input[type="search"]:focus {
 #greetingLink {
   background-color: rgba(247, 240, 240, 0.966);
   color: black;
-  padding: 5px 15px;
+  padding: 20px 20px;
   text-decoration: none;
+  float: right;
+  top: 2r;
+
+  border-radius: 10rem;
+  border-color: darkolivegreen;
+
 }
 
 #greetingLink:hover {
   background-color: grey
+}
+
+/* .todaysBirthdays {} */
+
+.rightDiv {
+
+  padding-top: 1.8rem;
+  /* border: solid; */
+  /* font-size: 60px; */
+  /* width: 40%; */
+  justify-content: center;
 }

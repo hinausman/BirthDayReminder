@@ -78,7 +78,7 @@ const data = [
     {
         id: 10,
         name: "Aditi Sawardekar",
-        dateofbirth: "06/05/1996",
+        dateofbirth: "06/10/1996",
         image: "images/empty.png",
         designation: "Student",
         email: "nnn@xyz.com"
@@ -86,7 +86,7 @@ const data = [
     {
         id: 11,
         name: "Zaina Faheem",
-        dateofbirth: "06/05/1996",
+        dateofbirth: "06/10/1996",
         image: "images/empty.png",
         designation: "Student",
         email: "hhh@xyz.com"
@@ -145,19 +145,32 @@ function handleSearch() {
         let dob = document.createElement("h4");
         dob.innerHTML = searchedData[j].dateofbirth;
 
-        let greetingsLink = document.createElement("a");
-        greetingsLink.href = "#";
-        greetingsLink.textContent = "Send Greetings";
+        let Desig = document.createElement("h4");
+        Desig.innerHTML = searchedData[j].designation;
+
+        let EmailId = document.createElement("h4");
+        EmailId.innerHTML = searchedData[j].email;
+
+        // let greetingsLink = document.createElement("a");
+        // greetingsLink.href = "mailto:" + searchedData[j].email + "?subject=Greetings!&body=Happy Birthday to you";
+        // greetingsLink.id = "greetingLink";
+        // greetingsLink.textContent = "Send Greetings";
 
         info.appendChild(name);
         info.appendChild(dob);
-        info.appendChild(greetingsLink);
+
+        info.appendChild(Desig);
+        info.appendChild(EmailId);
+        //info.appendChild(greetingsLink);
+
+
 
         article.appendChild(img);
         article.appendChild(info);
 
         section.appendChild(article);
         peopleSearchResult.appendChild(section);
+
 
     }
 
@@ -196,15 +209,15 @@ function handleSearch() {
         emailCell.className = "table-body-cell";
         emailCell.innerHTML = searchedData[k].email;
 
-        let greetingsCell = document.createElement("div");
-        greetingsCell.className = "table-body-cell";
-        greetingsCell.innerHTML = '<a href="#">Send Greetings</a>';
+        // let greetingsCell = document.createElement("div");
+        // greetingsCell.className = "table-body-cell";
+        // greetingsCell.innerHTML = '<a href="#">Send Greetings</a>';
 
         row.appendChild(nameCell);
         row.appendChild(dobCell);
         row.appendChild(designationCell);
         row.appendChild(emailCell);
-        row.appendChild(greetingsCell);
+        //row.appendChild(greetingsCell);
 
         respTableBody.appendChild(row);
 
@@ -271,17 +284,17 @@ function populateCardsView() {
         let EmailId = document.createElement("h4");
         EmailId.innerHTML = data[i].email;
 
-        let greetingsLink = document.createElement("a");
-        greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
-        greetingsLink.id = "greetingLink";
-        greetingsLink.textContent = "Send Greetings";
+        // let greetingsLink = document.createElement("a");
+        // greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
+        // greetingsLink.id = "greetingLink";
+        // greetingsLink.textContent = "Send Greetings";
 
         info.appendChild(name);
         info.appendChild(dob);
 
         info.appendChild(Desig);
         info.appendChild(EmailId);
-        info.appendChild(greetingsLink);
+        //info.appendChild(greetingsLink);
 
 
 
@@ -327,20 +340,100 @@ function populateTabularView() {
         emailCell.className = "table-body-cell";
         emailCell.innerHTML = data[i].email;
 
-        let greetingsCell = document.createElement("div");
-        greetingsCell.className = "table-body-cell";
-        greetingsCell.innerHTML = '<a href="#">Send Greetings</a>';
+        // let greetingsCell = document.createElement("div");
+        // greetingsCell.className = "table-body-cell";
+        // greetingsCell.innerHTML = '<a href="#">Send Greetings</a>';
 
         row.appendChild(nameCell);
         row.appendChild(dobCell);
         row.appendChild(designationCell);
         row.appendChild(emailCell);
-        row.appendChild(greetingsCell);
+        // row.appendChild(greetingsCell);
 
         respTableBody.appendChild(row);
 
     }
 }
+
+
+
+
+function todayBirthdays() {
+    const currentDate = new Date().getDate();
+    console.log("currentDate: " + currentDate);
+
+    const currentMonth = new Date().getMonth();
+    console.log("currentMonth : " + currentMonth);
+
+
+    let todayData = [];
+    // filter(today date and  month) initiaL data and push person objects in today data
+    for (let i = 0; i < data.length; i++) {
+        console.log(data[i]);
+
+        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
+            &&
+            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
+            todayData.push(data[i]);
+        }
+    }
+    let noOfBirthdays = document.getElementById("noOfBirthdays");
+    noOfBirthdays.innerHTML = todayData.length + " Birthdays today";
+
+    console.log(todayData.length);
+
+    let people = document.getElementById("people");
+
+
+
+    for (let j = 0; j < todayData.length; j++) {
+        let article = document.createElement("article");
+        article.className = "person";
+        let img = document.createElement("img");
+        img.src = todayData[j].image;
+        img.setAttribute("alt", todayData[j].name);
+
+        let info = document.createElement("div");
+
+        let name = document.createElement("h4");
+        //h4.setAttribute("id", "name");
+        name.innerHTML = todayData[j].name;
+
+        let dob = document.createElement("h4");
+        dob.innerHTML = todayData[j].dateofbirth;
+
+        let Desig = document.createElement("h4");
+        Desig.innerHTML = todayData[j].designation;
+
+        let EmailId = document.createElement("h4");
+        EmailId.innerHTML = todayData[j].email;
+
+        let greetingsLink = document.createElement("a");
+        greetingsLink.href = "mailto:" + todayData[j].email + "?subject=Greetings!&body=Happy Birthday to you";
+        greetingsLink.id = "greetingLink";
+        greetingsLink.innerHTML = '<i class="fa fa-envelope-o" aria-hidden="true"></i> Send Greetings';
+
+        info.appendChild(name);
+        info.appendChild(dob);
+
+        info.appendChild(Desig);
+        info.appendChild(EmailId);
+        info.appendChild(greetingsLink);
+
+
+
+        article.appendChild(img);
+        article.appendChild(info);
+
+        people.appendChild(article);
+    }
+
+}
+
+
+
+todayBirthdays();
+
 
 // populate data in cards view when page loads
 populateCardsView();
