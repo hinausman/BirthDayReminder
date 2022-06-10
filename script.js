@@ -1,5 +1,6 @@
 
 const data = [
+
     {
         id: 1,
         name: "Camila Abreu",
@@ -62,7 +63,7 @@ const data = [
     {
         id: 8,
         name: "Lalithauda",
-        dateofbirth: "06/06/1996",
+        dateofbirth: "03/05/1987",
         image: "images/lalitah.jpg",
         designation: "Student",
         email: "aletilalitha@gmail.com"
@@ -378,7 +379,7 @@ function todayBirthdays() {
         }
     }
     let noOfBirthdays = document.getElementById("noOfBirthdays");
-    noOfBirthdays.innerHTML = todayData.length + " Birthdays today";
+    noOfBirthdays.innerHTML = todayData.length + " Birthdays Today";
 
     console.log(todayData.length);
 
