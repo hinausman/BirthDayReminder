@@ -15,11 +15,11 @@
   /* background-color: rgb(240, 232, 232); */
   /* padding-top: 20Px; */
 
-  font-size: 40px;
+  font-size: 30px;
   /* padding-bottom: 30px; */
-  padding-left: 40px;
+  padding-left: 38px;
   /* padding-left: 39%; */
-  border-radius: 10px;
+  /* border-radius: 10px; */
   justify-content: left;
 
 }
@@ -41,9 +41,23 @@
 }
 
 .headerText {
-  padding-top: 30px;
-
+  padding-top: 10px;
+  font-size: larger;
+  font-style: normal;
+  text-transform: none;
+  animation: both;
+  color: dimgrey;
+  font-weight: bold;
 }
+
+/* padding-top: 10px;
+  font-size: larger;
+  font-style: normal;
+  font-weight: bold;
+
+  text-transform: none;
+  animation: both;
+} */
 
 
 
@@ -112,7 +126,11 @@ input[type="search"]:focus {
 .viewAs {
   margin-right: 5%;
   background-color: rgba(247, 240, 240, 0.966);
-
+  font-weight: bold;
+  font-style: normal;
+  padding: revert;
+  font-size: 15px;
+  color: dimgrey
 }
 
 
@@ -166,28 +184,33 @@ input[type="search"]:focus {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 30px;
+  margin: 80px;
   /* justify-content: center; */
-  /* background-image: url('images/background image.jpg'); */
+  /* background-image: url(images/background image.jpg); */
+  float: right;
+  margin-top: 45px;
 
 }
 
 .right-container {
   width: 90vw;
   margin: 10px;
-  max-width: 450px;
+  max-width: 380px;
   background: #fff;
   border-radius: 0.25rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   flex: 32%;
   height: 800px;
+  margin-top: 21px;
 
 }
 
 .rightContainerdImage {
-  width: 25rem;
+  border-radius: 10px;
+  width: 20rem;
 }
+
 
 .right-container h2 {
   font-weight: bold;
@@ -201,7 +224,7 @@ input[type="search"]:focus {
 }
 
 .container {
-  width: 90vw;
+  /* width: 90vw;
   margin: 10px;
   max-width: 450px;
   background: #fff;
@@ -209,7 +232,17 @@ input[type="search"]:focus {
   padding: 1.5rem 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   flex: 32%;
-  max-height: 200px;
+  max-height: 200px; */
+
+  width: 90vw;
+  margin: 10px;
+  max-width: 293px;
+  background: #fff;
+  border-radius: 0.25rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 40%);
+  flex: 32%;
+  height: 200px;
 
 }
 
@@ -224,16 +257,21 @@ input[type="search"]:focus {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  /* align-items: center; */
+  font-size: 12px;
+  margin-top: 30px;
 }
 
+/* margin-bottom: 1.5rem; */
+/* align-items: center; */
+
+
 .person img {
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+  box-shadow: 0 5px 30px rgb(0 0 0 / 18%);
+
 }
 
 .person h4 {
@@ -251,6 +289,7 @@ input[type="search"]:focus {
   padding-right: 50px;
   width: 75%;
   height: 100px;
+
 }
 
 /* tablDat started here */

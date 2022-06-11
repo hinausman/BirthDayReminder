@@ -4,7 +4,7 @@ const data = [
     {
         id: 1,
         name: "Camila Abreu",
-        dateofbirth: "11/09/1994", // changing date and month to current date to show initial content
+        dateofbirth: "06/11/1994", // changing date and month to current date to show initial content
         image: "images/camila.png",
         designation: "Student",
         email: "camilaabreu@gmail.com"
@@ -13,7 +13,7 @@ const data = [
     {
         id: 2,
         name: "Gohar Vardanyan",
-        dateofbirth: "06/05/1996",
+        dateofbirth: "06/11/1996",
         image: "images/gohar.jpg",
         designation: "Teacher",
         email: "goharvardyan@gmail.com"
