@@ -118,7 +118,7 @@ populateCardsView();
 // Populate data in tabular view when page loads
 populateTabularView();
 
-//todayBirthdays();
+todayBirthdays();
 
 
 function handleSearch() {
