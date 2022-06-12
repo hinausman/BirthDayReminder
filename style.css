@@ -50,16 +50,6 @@
   font-weight: bold;
 }
 
-/* padding-top: 10px;
-  font-size: larger;
-  font-style: normal;
-  font-weight: bold;
-
-  text-transform: none;
-  animation: both;
-} */
-
-
 
 .searchBarcontainer {
   display: flex;
@@ -172,21 +162,7 @@ input[type="search"]:focus {
   max-width: 1170px;
 }
 
-@media screen and (max-width: 992px) {
-  .section {
-    width: 95vw;
-  }
 
-  .mainHeader {
-    display: flex;
-    max-width: 100%;
-    font-size: 15px;
-
-    padding-left: 15px;
-
-    justify-content: left;
-  }
-}
 
 #peopleSearchResult {
   display: flex;
@@ -391,4 +367,20 @@ input[type="search"]:focus {
   /* font-size: 60px; */
   /* width: 40%; */
   justify-content: center;
+}
+
+@media screen and (max-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+
+  .mainHeader {
+    display: flex;
+    max-width: 100%;
+    font-size: 15px;
+
+    padding-left: 15px;
+
+    justify-content: left;
+  }
 }
