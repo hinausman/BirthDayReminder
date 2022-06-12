@@ -4,7 +4,7 @@ const data = [
     {
         id: 1,
         name: "Camila Abreu",
-        dateofbirth: "06/11/1994", // changing date and month to current date to show initial content
+        dateofbirth: "06/13/1994", // changing date and month to current date to show initial content
         image: "images/camila.png",
         designation: "Student",
         email: "camilaabreu@gmail.com"
@@ -13,7 +13,7 @@ const data = [
     {
         id: 2,
         name: "Gohar Vardanyan",
-        dateofbirth: "06/11/1996",
+        dateofbirth: "06/13/1996",
         image: "images/gohar.jpg",
         designation: "Teacher",
         email: "goharvardyan@gmail.com"
@@ -93,9 +93,6 @@ const data = [
         email: "hhh@xyz.com"
     },
 
-
-
-
 ];
 
 const btnCardView = document.getElementById("btnCardView");
@@ -118,10 +115,13 @@ populateCardsView();
 // Populate data in tabular view when page loads
 populateTabularView();
 
-todayBirthdays();
 
 
 function handleSearch() {
+
+    const currentDate = new Date().getDate();
+    const currentMonth = new Date().getMonth();
+
     let searchedData = [];
     let searchText = document.getElementById("txtSearch").value;
     if (searchText === "") {
@@ -133,7 +133,7 @@ function handleSearch() {
 
         if (data[i].name.toLowerCase().includes(searchText.toLowerCase())) {
             searchedData.push(data[i]);
-            // console.log(data[i])
+
         }
     }
 
@@ -165,17 +165,23 @@ function handleSearch() {
         let EmailId = document.createElement("h4");
         EmailId.innerHTML = searchedData[j].email;
 
-        // let greetingsLink = document.createElement("a");
-        // greetingsLink.href = "mailto:" + searchedData[j].email + "?subject=Greetings!&body=Happy Birthday to you";
-        // greetingsLink.id = "greetingLink";
-        // greetingsLink.textContent = "Send Greetings";
 
         info.appendChild(name);
         info.appendChild(dob);
 
         info.appendChild(Desig);
         info.appendChild(EmailId);
-        //info.appendChild(greetingsLink);
+        if (parseInt(searchedData[j].dateofbirth.substring(3, 5)) === currentDate
+            &&
+            parseInt(searchedData[j].dateofbirth.substring(0, 2)) === currentMonth + 1) {
+
+            let greetingsLink = document.createElement("a");
+            greetingsLink.href = "mailto:" + searchedData[j].email + "?subject=Greetings!&body=Happy Birthday to you";
+            greetingsLink.id = "greetingLink";
+            greetingsLink.textContent = "Send Greetings";
+            info.appendChild(greetingsLink);
+        }
+
 
 
 
@@ -223,15 +229,29 @@ function handleSearch() {
         emailCell.className = "table-body-cell";
         emailCell.innerHTML = searchedData[k].email;
 
-        // let greetingsCell = document.createElement("div");
-        // greetingsCell.className = "table-body-cell";
-        // greetingsCell.innerHTML = '<a href="#">Send Greetings</a>';
+
 
         row.appendChild(nameCell);
         row.appendChild(dobCell);
         row.appendChild(designationCell);
         row.appendChild(emailCell);
-        //row.appendChild(greetingsCell);
+
+        let greetingsCell = document.createElement("div");
+        greetingsCell.className = "table-body-cell";
+        if (parseInt(searchedData[k].dateofbirth.substring(3, 5)) === currentDate
+            &&
+            parseInt(searchedData[k].dateofbirth.substring(0, 2)) === currentMonth + 1) {
+
+            let greetingsLink = document.createElement("a");
+            greetingsLink.href = "mailto:" + searchedData[k].email + "?subject=Greetings!&body=Happy Birthday to you";
+            greetingsLink.id = "greetingLink";
+            greetingsLink.textContent = "Send Greetings";
+
+            // greetingsCell.innerHTML = '<a href="mailto:"' + searchedData[i].email + '?subject=Greetings!&body=Happy Birthday to you';
+            greetingsCell.appendChild = greetingsLink;
+
+        }
+        row.appendChild(greetingsCell);
 
         respTableBody.appendChild(row);
 
@@ -265,12 +285,14 @@ function handleTableView() {
 }
 
 
-
-
-
-
 function populateCardsView() {
     const peopleSearchResult = document.getElementById("peopleSearchResult");
+
+    const currentDate = new Date().getDate();
+    console.log("currentDate: " + currentDate);
+
+    const currentMonth = new Date().getMonth();
+    console.log("currentMonth : " + currentMonth);
 
     for (let i = 0; i < data.length; i++) {
         let section = document.createElement("section");
@@ -298,17 +320,25 @@ function populateCardsView() {
         let EmailId = document.createElement("h4");
         EmailId.innerHTML = data[i].email;
 
-        // let greetingsLink = document.createElement("a");
-        // greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
-        // greetingsLink.id = "greetingLink";
-        // greetingsLink.textContent = "Send Greetings";
+
 
         info.appendChild(name);
         info.appendChild(dob);
 
         info.appendChild(Desig);
         info.appendChild(EmailId);
-        //info.appendChild(greetingsLink);
+
+        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
+            &&
+            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
+
+            let greetingsLink = document.createElement("a");
+            greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
+            greetingsLink.id = "greetingLink";
+            greetingsLink.textContent = "Send Greetings";
+            info.appendChild(greetingsLink);
+        }
+
 
 
 
@@ -322,6 +352,12 @@ function populateCardsView() {
 }
 
 function populateTabularView() {
+
+    const currentDate = new Date().getDate();
+    console.log("currentDate: " + currentDate);
+
+    const currentMonth = new Date().getMonth();
+    console.log("currentMonth : " + currentMonth);
 
     const respTableBody = document.getElementById("resp-table-body");
 
@@ -354,94 +390,31 @@ function populateTabularView() {
         emailCell.className = "table-body-cell";
         emailCell.innerHTML = data[i].email;
 
-        // let greetingsCell = document.createElement("div");
-        // greetingsCell.className = "table-body-cell";
-        // greetingsCell.innerHTML = '<a href="#">Send Greetings</a>';
-
         row.appendChild(nameCell);
         row.appendChild(dobCell);
         row.appendChild(designationCell);
         row.appendChild(emailCell);
-        // row.appendChild(greetingsCell);
+
+        let greetingsCell = document.createElement("div");
+        greetingsCell.className = "table-body-cell";
+        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
+            &&
+            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
+
+            let greetingsLink = document.createElement("a");
+            greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
+            greetingsLink.id = "greetingLink";
+            greetingsLink.textContent = "Send Greetings";
+
+            // greetingsCell.innerHTML = '<a href="mailto:"' + data[i].email + '?subject=Greetings!&body=Happy Birthday to you';
+            greetingsCell.appendChild = greetingsLink;
+
+        }
+        row.appendChild(greetingsCell);
 
         respTableBody.appendChild(row);
 
     }
-}
-
-
-
-
-function todayBirthdays() {
-    const currentDate = new Date().getDate();
-    console.log("currentDate: " + currentDate);
-
-    const currentMonth = new Date().getMonth();
-    console.log("currentMonth : " + currentMonth);
-
-
-    let todayData = [];
-    // filter(today date and  month) initiaL data and push person objects in today data
-    for (let i = 0; i < data.length; i++) {
-        console.log(data[i]);
-
-        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
-            &&
-            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
-            todayData.push(data[i]);
-        }
-    }
-    let noOfBirthdays = document.getElementById("noOfBirthdays");
-    noOfBirthdays.innerHTML = todayData.length + " Birthdays Today";
-
-    console.log(todayData.length);
-
-    let people = document.getElementById("people");
-
-
-
-    for (let j = 0; j < todayData.length; j++) {
-        let article = document.createElement("article");
-        article.className = "person";
-        let img = document.createElement("img");
-        img.src = todayData[j].image;
-        img.setAttribute("alt", todayData[j].name);
-
-        let info = document.createElement("div");
-
-        let name = document.createElement("h4");
-        //h4.setAttribute("id", "name");
-        name.innerHTML = todayData[j].name;
-
-        let dob = document.createElement("h4");
-        dob.innerHTML = todayData[j].dateofbirth;
-
-        let Desig = document.createElement("h4");
-        Desig.innerHTML = todayData[j].designation;
-
-        let EmailId = document.createElement("h4");
-        EmailId.innerHTML = todayData[j].email;
-
-        let greetingsLink = document.createElement("a");
-        greetingsLink.href = "mailto:" + todayData[j].email + "?subject=Greetings!&body=Happy Birthday to you";
-        greetingsLink.id = "greetingLink";
-        greetingsLink.innerHTML = '<i class="fa fa-envelope-o" aria-hidden="true"></i> Send Greetings';
-
-        info.appendChild(name);
-        info.appendChild(dob);
-
-        info.appendChild(Desig);
-        info.appendChild(EmailId);
-        info.appendChild(greetingsLink);
-
-
-
-        article.appendChild(img);
-        article.appendChild(info);
-
-        people.appendChild(article);
-    }
-
 }
 
 

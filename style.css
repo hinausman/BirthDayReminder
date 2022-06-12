@@ -271,7 +271,7 @@ input[type="search"]:focus {
   padding-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
-  width: 75%;
+  width: 100%;
   height: 100px;
 
 }
@@ -360,14 +360,26 @@ input[type="search"]:focus {
 
 /* .todaysBirthdays {} */
 
-.rightDiv {
+.todaysBirthdays {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0px;
 
-  padding-top: 1.8rem;
-  /* border: solid; */
-  /* font-size: 60px; */
-  /* width: 40%; */
-  justify-content: center;
 }
+
+#todayBirthDayResults {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 80px;
+  /* justify-content: center; */
+  float: right;
+  margin-top: 45px;
+  width: 100%;
+}
+
 
 @media screen and (max-width: 992px) {
   .section {
