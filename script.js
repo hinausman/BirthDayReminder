@@ -107,6 +107,19 @@ btnSearch.addEventListener("click", handleSearch);
 
 
 btnCardView.addEventListener("click", handleCardView);
+btnTableView.addEventListener("click", handleTableView);
+
+
+
+
+// populate data in cards view when page loads
+populateCardsView();
+
+// Populate data in tabular view when page loads
+populateTabularView();
+
+//todayBirthdays();
+
 
 function handleSearch() {
     let searchedData = [];
@@ -242,7 +255,7 @@ function handleCardView() {
     document.getElementById("peopleSearchResultTable").style.display = "none"
 }
 
-btnTableView.addEventListener("click", handleTableView);
+
 
 function handleTableView() {
 
@@ -263,12 +276,12 @@ function populateCardsView() {
         let section = document.createElement("section");
         section.className = "container";
 
-        let article = document.createElement("article");
+        let article = document.createElement("div");
         article.className = "person";
 
         let img = document.createElement("img");
         img.src = data[i].image;
-        img.setAttribute("alt", data[i].name);
+        // img.setAttribute("alt", data[i].name);
 
         let info = document.createElement("div");
 
@@ -433,12 +446,4 @@ function todayBirthdays() {
 
 
 
-todayBirthdays();
-
-
-// populate data in cards view when page loads
-populateCardsView();
-
-// Populate data in tabular view when page loads
-populateTabularView();
 

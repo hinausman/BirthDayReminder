@@ -11,7 +11,7 @@
 
 .mainHeader {
   display: flex;
-  width: 100%;
+  max-width: 100%;
   /* background-color: rgb(240, 232, 232); */
   /* padding-top: 20Px; */
 
@@ -137,19 +137,17 @@ input[type="search"]:focus {
 
 
 
-/* font awsome style */
-/* Style buttons */
 .btn {
   background-color: white;
-  /* Blue background */
+
   border: none;
-  /* Remove borders */
+
   color: black;
-  /* White text */
+
   padding: 9px 8px;
-  /* Some padding */
+
   font-size: 16px;
-  /* Set a font size */
+
   cursor: pointer;
   /* Mouse pointer on hover */
 }
@@ -174,9 +172,19 @@ input[type="search"]:focus {
   max-width: 1170px;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
   .section {
     width: 95vw;
+  }
+
+  .mainHeader {
+    display: flex;
+    max-width: 100%;
+    font-size: 15px;
+
+    padding-left: 15px;
+
+    justify-content: left;
   }
 }
 
