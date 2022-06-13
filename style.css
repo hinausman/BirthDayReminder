@@ -4,34 +4,14 @@
   box-sizing: border-box;
 }
 
-
-
+/* Header */
 
 .mainHeader {
   display: flex;
   max-width: 100%;
-
-
   font-size: 30px;
-
   padding-left: 38px;
-
   justify-content: left;
-
-}
-
-#logo {
-  font-weight: bold;
-  font-size: 18px;
-  display: flex;
-  align-items: left;
-
-}
-
-.mainBox {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 4%;
 }
 
 .headerText {
@@ -44,19 +24,24 @@
   font-weight: bold;
 }
 
+#logo {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: left;
+}
+
+/* Search Bar */
 
 .searchBarcontainer {
   display: flex;
   justify-content: space-between;
   padding-left: 3%;
-
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   padding-top: 5px;
   padding-bottom: 5px;
   height: 45px;
-
 }
-
 
 form {
   color: #555;
@@ -105,8 +90,6 @@ input[type="search"]:focus {
   outline: none;
 }
 
-
-
 .viewAs {
   margin-right: 5%;
   background-color: rgba(247, 240, 240, 0.966);
@@ -117,21 +100,12 @@ input[type="search"]:focus {
   color: dimgrey
 }
 
-
-
-
-
 .btn {
   background-color: white;
-
   border: none;
-
   color: black;
-
   padding: 9px 8px;
-
   font-size: 16px;
-
   cursor: pointer;
 }
 
@@ -141,7 +115,22 @@ input[type="search"]:focus {
 
 /* mainbody started */
 
+.mainBox {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4%;
+}
 
+/* Card view */
+
+#peopleSearchResult {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 80px;
+  float: right;
+  margin-top: 45px;
+}
 
 .section {
   width: 90vw;
@@ -149,52 +138,7 @@ input[type="search"]:focus {
   max-width: 1170px;
 }
 
-
-
-#peopleSearchResult {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 80px;
-
-  float: right;
-  margin-top: 45px;
-
-}
-
-.right-container {
-  width: 90vw;
-  margin: 10px;
-  max-width: 380px;
-  background: #fff;
-  border-radius: 0.25rem;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  flex: 32%;
-  height: 800px;
-  margin-top: 21px;
-
-}
-
-.rightContainerdImage {
-  border-radius: 10px;
-  width: 20rem;
-}
-
-
-.right-container h2 {
-  font-weight: bold;
-  color: rgb(82, 77, 82);
-  text-transform: none;
-  margin-bottom: 2rem;
-  text-align: center;
-  animation: both;
-  margin-top: 2rem;
-
-}
-
 .container {
-
   width: 90vw;
   margin: 10px;
   max-width: 293px;
@@ -202,16 +146,7 @@ input[type="search"]:focus {
   border-radius: 0.25rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 5px 15px rgb(0 0 0 / 40%);
-  flex: 32%;
   height: 200px;
-
-}
-
-.container h3 {
-  font-weight: normal;
-  text-transform: none;
-  margin-bottom: 2rem;
-  text-align: center;
 }
 
 .person {
@@ -224,6 +159,17 @@ input[type="search"]:focus {
   font-family: sans-serif;
 }
 
+.person h4 {
+  margin-bottom: 0.35rem;
+}
+
+.person p {
+  margin-bottom: 0;
+}
+
+.person a {
+  margin-bottom: 3rem;
+}
 
 /* .person img { */
 .parentImage {
@@ -238,19 +184,28 @@ input[type="search"]:focus {
 
 .overLayImage {
   position: absolute;
-  top: 70px;
-  left: 0px;
-  width: 30px;
-  height: 30px;
+  top: 80px;
+  left: 24px;
+  width: 64px;
+  height: 58px;
 }
 
-.person h4 {
-  margin-bottom: 0.35rem;
+#greetingLink {
+  font-size: 13px;
+  background-color: grey;
+  color: white;
+  padding: 11px 25px;
+  text-decoration: none;
+  float: left;
+  margin-top: 14px;
+  border-radius: 0.2rem;
 }
 
-.person p {
-  margin-bottom: 0;
+#greetingLink:hover {
+  background-color: darkgrey;
 }
+
+/* Table View */
 
 #peopleSearchResultTable {
   display: none;
@@ -259,15 +214,12 @@ input[type="search"]:focus {
   padding-right: 50px;
   width: 100%;
   height: 100px;
-
 }
 
 /* tablData started here */
 #resp-table {
   width: 100%;
   display: table;
-
-
 }
 
 #resp-table-caption {
@@ -283,12 +235,10 @@ input[type="search"]:focus {
   font-weight: bold;
   font-size: 24px;
   font-family: sans-serif;
-
   /* padding-left: 40px; */
 }
 
 .table-header-cell {
-
   display: table-cell;
   padding: 10px;
   padding-left: 40px;
@@ -323,31 +273,6 @@ input[type="search"]:focus {
   font-family: sans-serif;
 }
 
-
-
-#greetingLink {
-  font-size: 13px;
-  background-color: grey;
-  color: white;
-  padding: 11px 25px;
-  text-decoration: none;
-  float: left;
-  margin-top: 14px;
-  border-radius: 0.2rem;
-  border-color: darkolivegreen;
-
-
-
-}
-
-.person a {
-  margin-bottom: 3rem;
-}
-
-#greetingLink:hover {
-  background-color: darkgrey;
-}
-
 .greetingTableLink {
   font-size: 10px;
   background-color: grey;
@@ -357,33 +282,10 @@ input[type="search"]:focus {
   float: left;
   margin-top: 14px;
   border-radius: 0.2rem;
-  border-color: darkolivegreen;
 }
 
 .greetingTableLink:hover {
   background-color: darkgrey;
-}
-
-/* .todaysBirthdays {} */
-
-.todaysBirthdays {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0px;
-
-}
-
-#todayBirthDayResults {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 80px;
-  /* justify-content: center; */
-  float: right;
-  margin-top: 45px;
-  width: 100%;
 }
 
 
@@ -396,23 +298,16 @@ input[type="search"]:focus {
     display: flex;
     max-width: 100%;
     font-size: 15px;
-
     padding-left: 15px;
-
     justify-content: left;
   }
 
   .btn {
     background-color: white;
-
     border: none;
-
     color: black;
-
     padding: 2px 2px;
-
     font-size: 5px;
-
     cursor: pointer;
   }
 

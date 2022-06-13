@@ -1,10 +1,10 @@
-
+// array of people objects 
+// each object contains id, name, dateofbirth, image, designation and email
 const data = [
-
     {
         id: 1,
         name: "Camila Abreu",
-        dateofbirth: "06/13/1990", // changing date and month to current date to show initial content
+        dateofbirth: "06/13/1990",
         image: "images/camila.png",
         designation: "Student",
         email: "camilaabreu@gmail.com"
@@ -21,12 +21,11 @@ const data = [
     {
         id: 3,
         name: "Deepali Jain ",
-        dateofbirth: "06/14/1988",     // changing dateofbirth and month to current date to show initial content
+        dateofbirth: "06/14/1988",
         image: "images/empty.png",
         designation: "Student",
         email: "aaa@xyz.com"
     },
-
     {
         id: 4,
         name: "Hina Usman",
@@ -100,32 +99,168 @@ const data = [
         designation: "Student",
         email: "julietarodriguezba@gmail.com"
     },
-
 ];
 
-
+// card view button on UI
 const btnCardView = document.getElementById("btnCardView");
+// table view button on UI
 const btnTableView = document.getElementById("btnTableView");
-
+// search button on UI
 const btnSearch = document.getElementById("btnSearch");
 
+// attaching event listner 'click' to search button 
+// when button search is clicked it will execute handleSearch() function
 btnSearch.addEventListener("click", handleSearch);
 
+// attaching event listner 'click' to cardView button
+// when button cardview is clicked it will execute handleCardView() function
+btnCardView.addEventListener("click", showCardView);
 
-btnCardView.addEventListener("click", handleCardView);
-btnTableView.addEventListener("click", handleTableView);
+// attaching event listner 'click' to tableView button
+// when button tableview is clicked it will execute handleTableView() function
+btnTableView.addEventListener("click", showTableView);
 
 
-
-
-// populate data in cards view when page loads
+// populate data in cards view when page loads. It loads data from data array which contains person objects 
 populateCardsView();
 
 // Populate data in tabular view when page loads
 populateTabularView();
 
+// show persons from data array in card view also shows greeting links and birthday image 
+// for persons who has birthday today 
+function populateCardsView() {
+    const peopleSearchResult = document.getElementById("peopleSearchResult");
+
+    const currentDate = new Date().getDate();
+    const currentMonth = new Date().getMonth();
+
+    for (let i = 0; i < data.length; i++) {
+        let section = document.createElement("section");
+        section.className = "container";
+
+        let article = document.createElement("div");
+        article.className = "person";
+
+        let img = document.createElement("img");
+        img.className = "parentImage";
+        img.src = data[i].image;
+
+        let info = document.createElement("div");
+
+        let name = document.createElement("h4");
+        name.innerHTML = data[i].name;
+
+        let dob = document.createElement("h4");
+        dob.innerHTML = data[i].dateofbirth;
+
+        let Desig = document.createElement("h4");
+        Desig.innerHTML = data[i].designation;
+
+        let EmailId = document.createElement("h4");
+        EmailId.innerHTML = data[i].email;
+
+        info.appendChild(name);
+        info.appendChild(dob);
+
+        info.appendChild(Desig);
+        info.appendChild(EmailId);
+
+        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
+            &&
+            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
+
+            let greetingsLink = document.createElement("a");
+            greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
+            greetingsLink.id = "greetingLink";
+            greetingsLink.textContent = "Send Greetings";
+
+            info.appendChild(greetingsLink);
+
+            let overlayImage = document.createElement("img");
+            overlayImage.src = "images/logo.png";
+            overlayImage.className = "overLayImage";
+
+            article.appendChild(overlayImage);
+        }
+
+        article.appendChild(img);
+        article.appendChild(info);
+
+        section.appendChild(article);
+        peopleSearchResult.appendChild(section);
+
+    }
+}
+
+// show persons from data array in table view also shows greeting links and birthday image
+// for persons who has birthday today 
+function populateTabularView() {
+
+    const currentDate = new Date().getDate();
+    const currentMonth = new Date().getMonth();
+
+    const respTableBody = document.getElementById("resp-table-body");
 
 
+    for (let i = 0; i < data.length; i++) {
+        const row = document.createElement("div");
+
+        // alernate css on rows of table
+        if (i % 2 == 0) {
+            row.className = "resp-table-row";
+        }
+        else {
+            row.className = "resp-table-row-colored";
+        }
+
+
+        let nameCell = document.createElement("div");
+        nameCell.className = "table-body-cell";
+        nameCell.innerHTML = data[i].name;
+
+        let dobCell = document.createElement("div");
+        dobCell.className = "table-body-cell";
+        dobCell.innerHTML = data[i].dateofbirth;
+
+        let designationCell = document.createElement("div");
+        designationCell.className = "table-body-cell";
+        designationCell.innerHTML = data[i].designation;
+
+        let emailCell = document.createElement("div");
+        emailCell.className = "table-body-cell";
+        emailCell.innerHTML = data[i].email;
+
+        row.appendChild(nameCell);
+        row.appendChild(dobCell);
+        row.appendChild(designationCell);
+        row.appendChild(emailCell);
+
+        let greetingsCell = document.createElement("div");
+        greetingsCell.className = "table-body-cell";
+        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
+            &&
+            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
+
+            let greetingsLink = document.createElement("a");
+            let greetingsText = document.createTextNode("Send Greetings")
+            greetingsLink.appendChild(greetingsText);
+            greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
+            greetingsLink.className = "greetingTableLink";
+
+
+
+            greetingsCell.appendChild(greetingsLink);
+
+        }
+        row.appendChild(greetingsCell);
+
+        respTableBody.appendChild(row);
+
+    }
+}
+
+// filters result in both cardview and table view with search input from UI
 function handleSearch() {
 
     const currentDate = new Date().getDate();
@@ -191,7 +326,7 @@ function handleSearch() {
             greetingsLink.textContent = "Send Greetings";
             info.appendChild(greetingsLink);
             let overlayImage = document.createElement("img");
-            overlayImage.src = "images/titleicon.png";
+            overlayImage.src = "images/logo.png";
             overlayImage.className = "overLayImage";
 
             article.appendChild(overlayImage);
@@ -271,180 +406,33 @@ function handleSearch() {
         respTableBody.appendChild(row);
 
     }
-
-
-
-
-
 }
 
-
+// removes children from html element.
+// It is called from handleSearch function to remove children of  peopleSearchResult div (cardview) and children
+// of resp-table-body div (table view)
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
 
-function handleCardView() {
+
+function showCardView() {
+    // set display to flex for cardview which is peopleSearchResult div in HTML  
     document.getElementById("peopleSearchResult").style.display = "flex"
+    //set display to none for tableview which is peopleSearchResultTable div in HTML
     document.getElementById("peopleSearchResultTable").style.display = "none"
 }
 
-
-
-function handleTableView() {
-
+function showTableView() {
+    // set display to none for cardview which is peopleSearchResult div in HTML  
     document.getElementById("peopleSearchResult").style.display = "none"
+    //set display to flex for tableview which is peopleSearchResultTable div in HTML
     document.getElementById("peopleSearchResultTable").style.display = "flex"
 
 }
 
-
-function populateCardsView() {
-    const peopleSearchResult = document.getElementById("peopleSearchResult");
-
-    const currentDate = new Date().getDate();
-    console.log("currentDate: " + currentDate);
-
-    const currentMonth = new Date().getMonth();
-    console.log("currentMonth : " + currentMonth);
-
-    for (let i = 0; i < data.length; i++) {
-        let section = document.createElement("section");
-        section.className = "container";
-
-        let article = document.createElement("div");
-        article.className = "person";
-
-        let img = document.createElement("img");
-        img.className = "parentImage";
-
-        img.src = data[i].image;
-        // img.setAttribute("alt", data[i].name);
-
-        let info = document.createElement("div");
-
-        let name = document.createElement("h4");
-        //h4.setAttribute("id", "name");
-        name.innerHTML = data[i].name;
-
-        let dob = document.createElement("h4");
-        dob.innerHTML = data[i].dateofbirth;
-
-        let Desig = document.createElement("h4");
-        Desig.innerHTML = data[i].designation;
-
-        let EmailId = document.createElement("h4");
-        EmailId.innerHTML = data[i].email;
-
-
-
-        info.appendChild(name);
-        info.appendChild(dob);
-
-        info.appendChild(Desig);
-        info.appendChild(EmailId);
-
-        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
-            &&
-            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
-
-            let greetingsLink = document.createElement("a");
-            greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
-            greetingsLink.id = "greetingLink";
-            greetingsLink.textContent = "Send Greetings";
-            info.appendChild(greetingsLink);
-
-
-            let overlayImage = document.createElement("img");
-            overlayImage.src = "images/titleicon.png";
-            overlayImage.className = "overLayImage";
-
-            article.appendChild(overlayImage);
-
-
-        }
-
-
-
-
-        article.appendChild(img);
-
-        article.appendChild(info);
-
-        section.appendChild(article);
-        peopleSearchResult.appendChild(section);
-
-    }
-}
-
-function populateTabularView() {
-
-    const currentDate = new Date().getDate();
-    console.log("currentDate: " + currentDate);
-
-    const currentMonth = new Date().getMonth();
-    console.log("currentMonth : " + currentMonth);
-
-    const respTableBody = document.getElementById("resp-table-body");
-
-
-    for (let i = 0; i < data.length; i++) {
-        const row = document.createElement("div");
-
-        // alernate css on rows of table
-        if (i % 2 == 0) {
-            row.className = "resp-table-row";
-        }
-        else {
-            row.className = "resp-table-row-colored";
-        }
-
-
-        let nameCell = document.createElement("div");
-        nameCell.className = "table-body-cell";
-        nameCell.innerHTML = data[i].name;
-
-        let dobCell = document.createElement("div");
-        dobCell.className = "table-body-cell";
-        dobCell.innerHTML = data[i].dateofbirth;
-
-        let designationCell = document.createElement("div");
-        designationCell.className = "table-body-cell";
-        designationCell.innerHTML = data[i].designation;
-
-        let emailCell = document.createElement("div");
-        emailCell.className = "table-body-cell";
-        emailCell.innerHTML = data[i].email;
-
-        row.appendChild(nameCell);
-        row.appendChild(dobCell);
-        row.appendChild(designationCell);
-        row.appendChild(emailCell);
-
-        let greetingsCell = document.createElement("div");
-        greetingsCell.className = "table-body-cell";
-        if (parseInt(data[i].dateofbirth.substring(3, 5)) === currentDate
-            &&
-            parseInt(data[i].dateofbirth.substring(0, 2)) === currentMonth + 1) {
-
-            let greetingsLink = document.createElement("a");
-            let greetingsText = document.createTextNode("Send Greetings")
-            greetingsLink.appendChild(greetingsText);
-            greetingsLink.href = "mailto:" + data[i].email + "?subject=Greetings!&body=Happy Birthday to you";
-            greetingsLink.className = "greetingTableLink";
-
-
-
-            greetingsCell.appendChild(greetingsLink);
-
-        }
-        row.appendChild(greetingsCell);
-
-        respTableBody.appendChild(row);
-
-    }
-}
 
 
 
