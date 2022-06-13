@@ -191,7 +191,7 @@ function handleSearch() {
             greetingsLink.textContent = "Send Greetings";
             info.appendChild(greetingsLink);
             let overlayImage = document.createElement("img");
-            overlayImage.src = "images/titleicon.png";
+            overlayImage.src = "images/logo.png";
             overlayImage.className = "overLayImage";
 
             article.appendChild(overlayImage);
@@ -357,7 +357,7 @@ function populateCardsView() {
 
 
             let overlayImage = document.createElement("img");
-            overlayImage.src = "images/titleicon.png";
+            overlayImage.src = "images/logo.png";
             overlayImage.className = "overLayImage";
 
             article.appendChild(overlayImage);
