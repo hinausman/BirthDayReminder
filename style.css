@@ -218,18 +218,30 @@ input[type="search"]:focus {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 0.75rem;
-  font-size: 12px;
+  font-size: 11px;
   margin-top: 30px;
+  position: relative;
+  font-family: sans-serif;
 }
 
 
-.person img {
+/* .person img { */
+.parentImage {
   width: 75px;
   height: 75px;
   object-fit: cover;
   border-radius: 10%;
   box-shadow: 0 5px 30px rgb(0 0 0 / 18%);
+  position: relative;
 
+}
+
+.overLayImage {
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
 }
 
 .person h4 {
@@ -269,7 +281,8 @@ input[type="search"]:focus {
   display: table-header-group;
   background-color: #d9d1d1;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 24px;
+  font-family: sans-serif;
 
   /* padding-left: 40px; */
 }
@@ -304,9 +317,10 @@ input[type="search"]:focus {
 .table-body-cell {
   display: table-cell;
   padding: 5px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   height: 20px;
   padding-left: 40px;
+  font-family: sans-serif;
 }
 
 
@@ -331,6 +345,22 @@ input[type="search"]:focus {
 }
 
 #greetingLink:hover {
+  background-color: darkgrey;
+}
+
+.greetingTableLink {
+  font-size: 10px;
+  background-color: grey;
+  color: white;
+  padding: 8px 25px;
+  text-decoration: none;
+  float: left;
+  margin-top: 14px;
+  border-radius: 0.2rem;
+  border-color: darkolivegreen;
+}
+
+.greetingTableLink:hover {
   background-color: darkgrey;
 }
 
@@ -392,3 +422,4 @@ input[type="search"]:focus {
     display: flex;
     align-items: left;
   }
+}
