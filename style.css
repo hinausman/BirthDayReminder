@@ -4,22 +4,18 @@
   box-sizing: border-box;
 }
 
-/* body {
-  background-image: url('images/background image.jpg');
-} */
+
 
 
 .mainHeader {
   display: flex;
   max-width: 100%;
-  /* background-color: rgb(240, 232, 232); */
-  /* padding-top: 20Px; */
+
 
   font-size: 30px;
-  /* padding-bottom: 30px; */
+
   padding-left: 38px;
-  /* padding-left: 39%; */
-  /* border-radius: 10px; */
+
   justify-content: left;
 
 }
@@ -27,17 +23,15 @@
 #logo {
   font-weight: bold;
   font-size: 18px;
-  /* display: flex; */
+  display: flex;
   align-items: left;
 
-
-  /* padding-top:10px; */
 }
 
 .mainBox {
   display: flex;
   justify-content: space-between;
-  margin-right: 20px;
+  margin-left: 4%;
 }
 
 .headerText {
@@ -139,18 +133,11 @@ input[type="search"]:focus {
   font-size: 16px;
 
   cursor: pointer;
-  /* Mouse pointer on hover */
 }
 
-/* Darker background on mouse-over */
 .btn:hover {
   background-color: rgba(247, 240, 240, 0.966);
 }
-
-
-
-
-
 
 /* mainbody started */
 
@@ -169,8 +156,7 @@ input[type="search"]:focus {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 80px;
-  /* justify-content: center; */
-  /* background-image: url(images/background image.jpg); */
+
   float: right;
   margin-top: 45px;
 
@@ -208,15 +194,6 @@ input[type="search"]:focus {
 }
 
 .container {
-  /* width: 90vw;
-  margin: 10px;
-  max-width: 450px;
-  background: #fff;
-  border-radius: 0.25rem;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  flex: 32%;
-  max-height: 200px; */
 
   width: 90vw;
   margin: 10px;
@@ -244,9 +221,6 @@ input[type="search"]:focus {
   font-size: 12px;
   margin-top: 30px;
 }
-
-/* margin-bottom: 1.5rem; */
-/* align-items: center; */
 
 
 .person img {
@@ -276,7 +250,7 @@ input[type="search"]:focus {
 
 }
 
-/* tablDat started here */
+/* tablData started here */
 #resp-table {
   width: 100%;
   display: table;
@@ -338,15 +312,17 @@ input[type="search"]:focus {
 
 
 #greetingLink {
+  font-size: 13px;
   background-color: grey;
   color: white;
-  padding: 10px 10px;
+  padding: 11px 25px;
   text-decoration: none;
   float: left;
-  /* margin-top: 100px; */
-
-  border-radius: 8rem;
+  margin-top: 14px;
+  border-radius: 0.2rem;
   border-color: darkolivegreen;
+
+
 
 }
 
@@ -395,4 +371,24 @@ input[type="search"]:focus {
 
     justify-content: left;
   }
-}
+
+  .btn {
+    background-color: white;
+
+    border: none;
+
+    color: black;
+
+    padding: 2px 2px;
+
+    font-size: 5px;
+
+    cursor: pointer;
+  }
+
+  #logo {
+    font-weight: bold;
+    font-size: 8px;
+    display: flex;
+    align-items: left;
+  }

@@ -92,6 +92,14 @@ const data = [
         designation: "Student",
         email: "hhh@xyz.com"
     },
+    {
+        id: 12,
+        name: "Julieta Rodríguez",
+        dateofbirth: "06/13/1996",
+        image: "images/juleita.jpg",
+        designation: "Student",
+        email: "julietarodriguezba@gmail.com"
+    },
 
 ];
 
