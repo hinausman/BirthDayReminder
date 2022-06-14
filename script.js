@@ -13,7 +13,7 @@ const data = [
     {
         id: 2,
         name: "Gohar Vardanyan",
-        dateofbirth: "06/13/1988",
+        dateofbirth: "06/14/1988",
         image: "images/gohar.jpg",
         designation: "Teacher",
         email: "goharvardyan@gmail.com"
@@ -94,18 +94,18 @@ const data = [
     {
         id: 12,
         name: "Julieta Rodríguez",
-        dateofbirth: "06/13/1988",
+        dateofbirth: "06/14/1988",
         image: "images/juleita.jpg",
         designation: "Student",
         email: "julietarodriguezba@gmail.com"
     },
 ];
 
-// card view button on UI
+// card view button on display
 const btnCardView = document.getElementById("btnCardView");
-// table view button on UI
+// table view button on dispaly
 const btnTableView = document.getElementById("btnTableView");
-// search button on UI
+// search button on display
 const btnSearch = document.getElementById("btnSearch");
 
 // attaching event listner 'click' to search button 
