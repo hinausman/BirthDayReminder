@@ -70,10 +70,10 @@ const data = [
     {
         id: 9,
         name: "Shobana",
-        dateofbirth: "11/09/1988",
+        dateofbirth: "06/14/1988",
         image: "images/empty.png",
         designation: "Student",
-        email: "ggg@xyz.com"
+        email: "mathiarulshobana@gmail.com"
     },
     {
         id: 10,
@@ -260,7 +260,7 @@ function populateTabularView() {
     }
 }
 
-// filters result in both cardview and table view with search input from UI
+// filters result in both cardview and table view with search input from page
 function handleSearch() {
 
     const currentDate = new Date().getDate();
@@ -298,7 +298,7 @@ function handleSearch() {
         let info = document.createElement("div");
 
         let name = document.createElement("h4");
-        //h4.setAttribute("id", "name");
+
         name.innerHTML = searchedData[j].name;
 
         let dob = document.createElement("h4");
