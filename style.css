@@ -74,7 +74,9 @@ button[type="button"] {
   margin: 0;
   border: 1px solid transparent;
   border-radius: inherit;
-  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
   cursor: pointer;
   opacity: 0.7;
 }
@@ -97,7 +99,7 @@ input[type="search"]:focus {
   font-style: normal;
   padding: revert;
   font-size: 15px;
-  color: dimgrey
+  color: dimgrey;
 }
 
 .btn {
@@ -179,7 +181,6 @@ input[type="search"]:focus {
   border-radius: 10%;
   box-shadow: 0 5px 30px rgb(0 0 0 / 18%);
   position: relative;
-
 }
 
 .overLayImage {
@@ -236,6 +237,9 @@ input[type="search"]:focus {
   font-size: 24px;
   font-family: sans-serif;
   /* padding-left: 40px; */
+  padding: auto;
+
+  max-width: 10px;
 }
 
 .table-header-cell {
@@ -261,7 +265,6 @@ input[type="search"]:focus {
   display: table-row;
   background-color: rgba(169, 162, 162, 0.966);
   height: 20px;
-
 }
 
 .table-body-cell {
@@ -287,7 +290,6 @@ input[type="search"]:focus {
 .greetingTableLink:hover {
   background-color: darkgrey;
 }
-
 
 @media screen and (max-width: 992px) {
   .section {

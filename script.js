@@ -13,7 +13,7 @@ const data = [
     {
         id: 2,
         name: "Gohar Vardanyan",
-        dateofbirth: "06/14/1988",
+        dateofbirth: "06/19/1988",
         image: "images/gohar.jpg",
         designation: "Teacher",
         email: "goharvardyan@gmail.com"
@@ -70,7 +70,7 @@ const data = [
     {
         id: 9,
         name: "Shobana",
-        dateofbirth: "06/14/1988",
+        dateofbirth: "06/19/1988",
         image: "images/empty.png",
         designation: "Student",
         email: "mathiarulshobana@gmail.com"
